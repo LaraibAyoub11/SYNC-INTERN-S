@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Music & Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+         background: hsla(64, 41%, 92%, 1);
+
+background: linear-gradient(90deg, hsla(64, 41%, 92%, 1) 0%, hsla(196, 83%, 84%, 1) 50%, hsla(305, 75%, 83%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(64, 41%, 92%, 1) 0%, hsla(196, 83%, 84%, 1) 50%, hsla(305, 75%, 83%, 1) 100%);
+
+        }
+
+        #player-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color:#9bb2e5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        audio, video {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            background-color:#ad336d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color:#5e435d;
+        }
+
+        #playlist {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        #playlist div {
+            padding: 8px;
+            margin-bottom: 5px;
+            background-color: #ddd;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        #playlist div:hover {
+            background-color: #ccc;
+        }
+
+        #file-container {
+            margin-bottom: 15px;
+        }
+
+        #file-container input {
+            display: none;
+        }
+
+        #file-container label {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color:#ad336d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        #file-container label:hover {
+            background-color: #5e435d;
+        }
+    </style>
+</head>
+<body>
+    <div id="player-container">
+        <div id="file-container">
+            <input type="file" id="video-file" accept=".mp4" />
+            <label for="video-file">Choose File</label>
+        </div>
+        <video id="video-player" controls></video>
+        <div id="playlist"></div>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="next()">Next</button>
+        <button onclick="prev()">Previous</button>
+    </div>
+
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+        const playlist = document.getElementById('playlist');
+        const videoFileInput = document.getElementById('video-file');
+        let currentSongIndex = 0;
+        let songs = [];
+    
+        videoFileInput.addEventListener('change', addSong);
+    
+        function addSong() {
+            const fileInput = document.getElementById('video-file');
+            const file = fileInput.files[0];
+    
+            if (file) {
+                const fileName = file.name.toLowerCase();
+    
+                if (fileName.endsWith('.mp4')) {
+                    songs.push(file);
+                    const listItem = document.createElement('div');
+                    listItem.textContent = file.name;
+                    playlist.appendChild(listItem);
+                    listItem.addEventListener('click', () => playSong(songs.length - 1));
+                } else {
+                    alert('Please select a valid .mp4 file.');
+                }
+            }
+        }
+    
+        function playSong(index) {
+            if (index >= 0 && index < songs.length) {
+                currentSongIndex = index;
+                const selectedSong = songs[currentSongIndex];
+                videoPlayer.src = URL.createObjectURL(selectedSong);
+                videoPlayer.load();
+                videoPlayer.play();
+            }
+        }
+    
+        function playPause() {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+            } else {
+                videoPlayer.pause();
+            }
+        }
+    
+        function stop() {
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    
+        function next() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            playSong(currentSongIndex);
+        }
+    
+        function prev() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            playSong(currentSongIndex);
+        }
+    
+        videoPlayer.addEventListener('ended', () => {
+            next();
+        });
+    </script>
+    
+</body>
+</html>

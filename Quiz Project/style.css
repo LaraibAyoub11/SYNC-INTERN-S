@@ -1,0 +1,110 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: hsla(63, 100%, 77%, 1);
+
+background: linear-gradient(90deg, hsla(63, 100%, 77%, 1) 0%, hsla(331, 74%, 68%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(63, 100%, 77%, 1) 0%, hsla(331, 74%, 68%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(63, 100%, 77%, 1) 0%, hsla(331, 74%, 68%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FAFF89", endColorstr="#EA72AD", GradientType=1 );
+}
+
+.quiz-container {
+  max-width: 600px;
+  width: 100%;
+  background-color:#d5cfac;
+  border: 2px solid #a2dbd4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.question-container {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  border-bottom: 2px solid ease;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #646769;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d6dad9;
+}
+
+.next-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 13px;
+  margin-top: 10px;
+}
+
+.next-button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #606c38;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #83888b;
+}
+
+/* .timer-bar {
+  height: 10px;
+  background-color: #ff5252;
+  width: 100%;
+  margin-top: 5px;
+} */
+.timer-bar {
+  display: flex;
+  justify-content: flex-end; /* Adjusted to push the time to the right */
+  align-items: center;
+  height: 10px;
+  background: hsla(52, 43%, 55%, 1);
+
+background: linear-gradient(90deg, hsla(52, 43%, 55%, 1) 0%, hsla(51, 33%, 75%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(52, 43%, 55%, 1) 0%, hsla(51, 33%, 75%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(52, 43%, 55%, 1) 0%, hsla(51, 33%, 75%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#BEB15B", endColorstr="#D5CFAC", GradientType=1 );
+  width: 100%;
+  margin-top: 5px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.timer-bar p {
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+}
