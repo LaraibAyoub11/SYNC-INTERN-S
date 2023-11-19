@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-Learning Platform</title>
+</head>
+<body>
+    <header>
+        <h1>E-Learning Platform</h1>
+    </header>
+    <div class="container">
+        <section class="feature" id="signup">
+            <h2>Feature 1: Signing up online</h2>
+            <button onclick="toggleForm('signup')">Sign Up</button>
+            <div class="form-container" id="signup-form">
+                <!-- Your signup form content here -->
+                <form>
+                    <!-- Your signup form fields -->
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+        <section class="feature" id="upload">
+            <h2>Feature 2: Facility of uploading documents online</h2>
+            <button onclick="toggleForm('upload')">Upload Document</button>
+            <div class="form-container" id="File">
+                <!-- Your upload document form content here -->
+                <form>
+                    <!-- Your upload document form fields -->
+                    <!-- <input type="file" accept=".pdf, .doc, .docx"> -->
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </section>
+    </section>
+    <section class="feature" id="responsive">
+        <h2>Feature 3: Responsive Design</h2>
+        <!-- Your content for responsive design -->
+    </section>
+    <section class="feature" id="assessments">
+        <h2>Feature 4: Online Assessments</h2>
+        <!-- Your content for online assessments -->
+    </section>
+        <section class="feature" id="future" onclick="toggleContent('future')">
+            <h2>Feature 5: Future of e-learning</h2>
+            <div class="expandable-content" id="future-content" style="display: none;">
+                <!-- Your content for the future of e-learning -->
+                <p>
+                    E-learning is here to stay. As computer ownership grows
+across the globe e-learning becomes increasingly viable
+and accessible. Internet connection speeds are
+increasing, and with that, opportunities for more
+multimedia training methods arise. With the immense
+improvement of mobile networks in the past few years
+and the increase in telecommuting, taking all the
+awesome features of e-learning on the road is a reality
+with smartphones and other portable devices.
+Technologies such as social media are also transforming
+education constantly.
+Generally speaking, learning is expensive, takes a long
+time and the results can vary. E-learning has been trying
+for years now to complement the way we learn to make
+30
+it more effective and measurable. The result now being
+that there are a number of tools that help create
+interactive courses, standardize the learning process
+and/or inject informal elements to otherwise formal
+learning processes. Several e-learning trends give us a
+view to how e-learning and learning tools will be shaped
+in the future: 
+                
+                </p>
+            </div>
+        </section>
+        <section class="feature" id="communication" onclick="toggleContent('communication')">
+            <h2>Feature 6: Communication through LMS</h2>
+            <div class="expandable-content" id="communication-content" style="display: none;">
+                <!-- Your content for communication through LMS -->
+                <p>
+                    Communication through Learning Management System (LMS) is essential 
+                    for fostering collaboration among learners and educators. LMS provides 
+                    tools for discussions, messaging, and sharing resources, creating a 
+                    dynamic and interactive learning environment.LMS stands for Learning Management System and it's a
+                    global term for a computer system specifically
+                    developed for managing online courses, distributing
+                    course materials and allowing collaboration between
+                    students and teachers. A LMS will allow you to manage
+                    every aspect of a course, from the registration of
+                    students to the storing of test results, as well as allowing
+                    you to accept assignments digitally and keep in touch
+                    with your students. In essence, the LMS is the backbone
+                    of most e-learning activities.
+                    LMSs are built on various platforms, commonly PHP,
+                    .Net or Java and they will hook up to a database such as
+                    35
+                    PostgreSQL, MySQL or SQL Server. There are many
+                    LMSs out there, both commercial and open source.
+                    In a corporate environment such a system can be used
+                    to monitor staff, and keep records of appraisals and
+                    training. Whether your course is run for a few learners
+                    over a long period of time, or for many over a shorter
+                    period, a Learning Management System makes your life
+                    easier and helps your course run smoothly. A good LMS
+                    will also have a reporting system so you can access
+                    information that would be tricky to gather yourself. 
+                </p>
+            </div>
+        </section>
+        <section class="feature" id="admin" onclick="toggleContent('admin')">
+            <h2>Feature 7: Admin Dashboard</h2>
+            <div class="expandable-content" id="admin-content" style="display: none;">
+                <!-- Your content for the admin dashboard -->
+                <p>
+                    Welcome to the Admin Dashboard! Manage and monitor the e-learning platform here.
+                </p>
+        <!-- ... (Other features) ... -->
+    </div>
+    <script src="javascript.js"></script>
+</body>
+</html>

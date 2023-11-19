@@ -1,0 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #3498db, #9b59b6);
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.feature {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Added styles for the form container */
+.form-container {
+    display: none;
+}
+
+/* Added styles for expandable content */
+.expandable-content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .feature {
+        padding: 10px;
+    }
+}
